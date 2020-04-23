@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "CardParts",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v10),
         .tvOS(.v11)
     ],
     products: [
