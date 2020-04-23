@@ -19,9 +19,9 @@ let package = Package(
         .package(url: "https://github.com/RxSwiftCommunity/RxGesture", from: "3.0.2")
     ],
     targets: [
-        .target(
+    	.target(
             name: "CardParts",
-            dependencies: ["RxSwift", "RxCocoa", "RxDataSources", "RxGesture"],
+            dependencies: ["RxSwift", "RxCocoa", "RxDataSources"],
             path: "CardParts/src")
     ]
 )

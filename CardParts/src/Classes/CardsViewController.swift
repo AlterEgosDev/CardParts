@@ -336,14 +336,18 @@ open class CardsViewController : UIViewController, UICollectionViewDataSource, U
     
     public var shouldListenToKeyboardNotifications: Bool = true {
         didSet {
+#if os(iOS)
             if shouldListenToKeyboardNotifications {
                 listenToKeyboardShowHideNotifications()
             } else {
                 stopListeningToKeyboardShowHideNotifications()
             }
+#endif
         }
     }
 }
+
+#if os(iOS)
 
 extension CardsViewController {
     
@@ -434,6 +438,7 @@ extension CardsViewController {
 
     }
 }
+#endif
 
 // scroll view delegate extension. This allows subclasses of CardsViewController to implement these scroll view delegate methods
 extension CardsViewController {

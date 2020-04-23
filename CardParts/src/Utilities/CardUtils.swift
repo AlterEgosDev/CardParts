@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /*
  * Defines utility methods for cards.

@@ -97,6 +97,8 @@ public class CardPartAttributedTextView: UIView, CardPartView {
             }
         }
     }
+    
+#if os(iOS)
     /// set whether the text within a text field is editable
     public var isEditable: Bool {
         didSet {
@@ -105,6 +107,7 @@ public class CardPartAttributedTextView: UIView, CardPartView {
             }
         }
     }
+    
     /// use to specify data that should automatically be passed toother applications as URLs, e.g. phone numbers
     public var dataDetectorTypes: UIDataDetectorTypes {
         didSet {
@@ -113,6 +116,7 @@ public class CardPartAttributedTextView: UIView, CardPartView {
             }
         }
     }
+#endif
     /// use to specify text alignment wthin the text field
     public var textAlignment: NSTextAlignment {
         didSet {
@@ -173,10 +177,14 @@ public class CardPartAttributedTextView: UIView, CardPartView {
         textView.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
         textView.isScrollEnabled = false
         textView.textColor = textColor
+#if os(iOS)
         textView.isEditable = false
+#endif
         self.textView.isSelectable = textView.isSelectable
+#if os(iOS)
         self.isEditable = textView.isEditable
         self.dataDetectorTypes = textView.dataDetectorTypes
+#endif
         self.textAlignment = textView.textAlignment
         self.linkTextAttributes = textView.linkTextAttributes
         self.exclusionPath = textView.textContainer.exclusionPaths
@@ -260,7 +268,7 @@ extension Reactive where Base: CardPartAttributedTextView {
             textView.textColor = textColor
         }
     }
-    
+ #if os(iOS)
     public var isEditable: Binder<Bool> {
         return Binder(self.base) { (textView, isEditable) -> () in
             textView.isEditable = isEditable
@@ -272,7 +280,7 @@ extension Reactive where Base: CardPartAttributedTextView {
             textView.dataDetectorTypes = dataDetectorTypes
         }
     }
-    
+#endif
     public var textAlignment: Binder<NSTextAlignment> {
         return Binder(self.base) { (textView, textAlignment) -> () in
             textView.textAlignment = textAlignment

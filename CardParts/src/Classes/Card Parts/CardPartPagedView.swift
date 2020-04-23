@@ -46,7 +46,9 @@ public class CardPartPagedView: UIView, CardPartView {
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
 		scrollView.backgroundColor = UIColor.clear
 		scrollView.isScrollEnabled = true
+#if os(iOS)
 		scrollView.isPagingEnabled = true
+#endif
 		scrollView.showsHorizontalScrollIndicator = false
 		self.height = height
 		

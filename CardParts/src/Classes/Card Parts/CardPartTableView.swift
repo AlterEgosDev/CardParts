@@ -56,7 +56,9 @@ public class CardPartTableView : UIView, CardPartView, UITableViewDelegate {
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.register(CardPartTableViewCell.self, forCellReuseIdentifier: kDefaultCellId)
 		tableView.isScrollEnabled = false
+#if os(iOS)
         tableView.separatorColor = UIColor.turboSeperatorColor
+#endif
 		tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
 		
 		super.init(frame: CGRect.zero)

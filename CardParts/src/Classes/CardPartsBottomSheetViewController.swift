@@ -351,7 +351,9 @@ extension CardPartsBottomSheetViewController: UIGestureRecognizerDelegate {
         if shouldListenToOverlayTap && shouldIncludeOverlay {
             let overlayTouch = UITapGestureRecognizer(target: self, action: #selector(self.tapInOverlay))
             overlayTouch.numberOfTapsRequired = 1
+#if os(iOS)
             overlayTouch.numberOfTouchesRequired = 1
+#endif
             darkOverlay.addGestureRecognizer(overlayTouch)
         }
     }

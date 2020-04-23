@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
+
+#if os(iOS)
 
 public class CardPartSliderView : UISlider, CardPartView {
     
@@ -56,3 +59,5 @@ extension Reactive where Base: CardPartSliderView {
         }
     }
 }
+
+#endif

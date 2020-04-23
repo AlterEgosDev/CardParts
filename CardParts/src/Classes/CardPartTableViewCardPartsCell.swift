@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 open class CardPartTableViewCardPartsCell : UITableViewCell {
 		
@@ -27,9 +28,9 @@ open class CardPartTableViewCardPartsCell : UITableViewCell {
 		stackView.spacing = 0
 
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
+#if os(iOS)
 		separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-		
+#endif
 		for subview in contentView.subviews {
 			subview.removeFromSuperview()
 		}

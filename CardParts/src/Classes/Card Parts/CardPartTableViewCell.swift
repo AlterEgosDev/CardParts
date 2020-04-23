@@ -118,9 +118,9 @@ public class CardPartTableViewCell : UITableViewCell {
 		rightTopButton.translatesAutoresizingMaskIntoConstraints = false
 
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
+    #if os(iOS)
 		separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-		
+	#endif
 		
 		for subview in contentView.subviews {
 			subview.removeFromSuperview()

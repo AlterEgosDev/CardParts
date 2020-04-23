@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class CardPartCenteredView: UIView, CardPartView {
     public var margins: UIEdgeInsets = CardParts.theme.cardPartMargins
