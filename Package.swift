@@ -14,9 +14,9 @@ let package = Package(
             targets: ["CardParts"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "4.5.0"),
-        .package(url: "https://github.com/RxSwiftCommunity/RxDataSources", from: "3.1.0"),
-        .package(url: "https://github.com/RxSwiftCommunity/RxGesture", from: "2.2.0")
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.1.1"),
+        .package(url: "https://github.com/RxSwiftCommunity/RxDataSources", from: "4.0.1"),
+        .package(url: "https://github.com/RxSwiftCommunity/RxGesture", from: "3.0.2")
     ],
     targets: [
         .target(
